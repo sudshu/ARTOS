@@ -4,6 +4,10 @@ ARTOS is an expert-supervised orchestration and audit framework for carrying out
 
 Human scientists define the scientific boundaries and claim criteria, approve consequential actions, and decide which conclusions are supported. ARTOS coordinates the work in between: maintaining an overview of hypotheses and evidence, proposing discriminating tests, running approved analyses, and auditing the results.
 
+![ARTOS connected hypothesis testing](docs/artos_hypothesis_space.png)
+
+**Connected hypothesis testing, illustrated for carbon-cycle science.** Each grey node is a candidate hypothesis; edges connect hypotheses that share mechanisms, observations, or models. **(A)** Research expertise is organized around disciplinary entry points — plant and ecosystem processes, atmospheric observations and remote sensing, land–atmosphere modeling and inversion. Each community tests the cluster of hypotheses nearest its own methods deeply, but practical coverage of the connected network remains partial. **(B)** ARTOS links ecosystem expertise and data, atmospheric observations, and approved model workflows through one hub that proposes, branches, tests, and records hypotheses across the network, with scientists approving and auditing every consequential step. Testing becomes broader, but stays human-supervised rather than exhaustive.
+
 ## Design principles
 
 1. **Competing hypotheses, held open.** The originating research question is recorded separately from derived hypotheses, and specialized agents maintain the full set of live explanations rather than converging early.
