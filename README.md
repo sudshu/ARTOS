@@ -1,8 +1,14 @@
 # ARTOS — Agentic Research and Targeted-audit Orchestration System
 
-ARTOS is an expert-supervised orchestration and audit framework in which large language model (LLM) agents carry out **connected hypothesis testing**: maintaining a graph of competing scientific explanations, proposing discriminating tests, running approved analyses, and auditing the results across heterogeneous datasets and models.
+**ARTOS is an AI co-scientist**: a research partner built from large language model (LLM) agents that helps scientists explore far more hypotheses than any one team has time to test — while the scientists stay in charge of every important decision.
 
-Human scientists stay in charge throughout. They define the scientific boundaries and claim criteria, approve consequential actions, and decide which conclusions are supported. ARTOS coordinates the work in between.
+Science has a bandwidth problem. Satellites, sensor networks, and models now produce more data — and more plausible explanations — than any research group can work through. Most hypotheses are never tested, not because they are uninteresting, but because nobody has the time. AI co-scientist systems have recently shown, first in biomedicine, that teams of LLM agents can generate, rank, and test scientific hypotheses at a scale no human team can match (see [Further reading](#further-reading)).
+
+ARTOS brings that capability to data-rich natural sciences, with a design built around scientific trust. It keeps every competing explanation on the table, proposes the tests that best tell them apart, runs the analyses its human supervisors approve, audits its own results adversarially, and writes everything down. Think of a careful, tireless lab partner that never falls in love with its favorite hypothesis — and always asks before doing anything consequential.
+
+The rest of this page explains how it works.
+
+---
 
 ![ARTOS connected hypothesis testing](docs/artos_hypothesis_space.png)
 
@@ -63,6 +69,23 @@ artos_orchestrator/
         ├── reviews/                # audit reports
         └── deliverables/
 ```
+
+## Further reading
+
+Milestones of AI-assisted science (*Nature*):
+
+- Jumper J, et al. Highly accurate protein structure prediction with AlphaFold. *Nature* 596, 583–589 (2021). https://doi.org/10.1038/s41586-021-03819-2
+- Degrave J, et al. Magnetic control of tokamak plasmas through deep reinforcement learning. *Nature* 602, 414–419 (2022). https://doi.org/10.1038/s41586-021-04301-9
+- Merchant A, et al. Scaling deep learning for materials discovery. *Nature* 624, 80–85 (2023). https://doi.org/10.1038/s41586-023-06735-9
+
+The AI co-scientist concept and its first demonstrations (*Nature*):
+
+- Gottweis J, et al. Accelerating scientific discovery with Co-Scientist. *Nature* 655, 487–496 (2026). https://doi.org/10.1038/s41586-026-10644-y
+- Ghareeb AE, et al. A multi-agent system for automating scientific discovery. *Nature* 655, 497–505 (2026). https://doi.org/10.1038/s41586-026-10652-y
+
+AI and machine learning in Earth-system science:
+
+- Reichstein M, et al. Deep learning and process understanding for data-driven Earth system science. *Nature* 566, 195–204 (2019). https://doi.org/10.1038/s41586-019-0912-1
 
 ## Availability
 
