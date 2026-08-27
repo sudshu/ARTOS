@@ -15,10 +15,51 @@ Human scientists define the scientific boundaries and claim criteria, approve co
 7. **Untrusted inputs.** Papers, emails, and web content are treated as research inputs, never as operating instructions.
 8. **Model-agnostic.** ARTOS can use commercial or locally run language models interchangeably.
 
-## Anatomy of a run
+## How a user works with ARTOS
 
-Each investigation is a self-contained run with structured artifacts: a resource inventory, the frozen analysis contract, per-role work directories (orchestrator, ranker, primary researcher, adversarial auditor), and audit reports. Methods and dataset versions precede results in every research summary.
+The user supplies a research question, a claim to investigate, or a document (manuscript, dataset description, correspondence). ARTOS opens a *run* for it and advances the run through numbered, auditable stages:
 
-## Status
+1. **Intake** — the source request is preserved verbatim before interpretation.
+2. **Inventory** — available data, models, and compute are catalogued before anything is searched for or downloaded.
+3. **Orientation and routing** — the work is routed as direct analysis, hybrid, or hypothesis-driven investigation, with the rationale recorded.
+4. **Hypothesis tournament** — candidate explanations are proposed, then ranked by a separate agent context.
+5. **Contract freeze** — the analysis plan is frozen and hashed before empirical testing.
+6. **Execution and audit** — primary and adversarial agents work in separate sessions and directories; audit findings gate finalization.
+7. **Deliverables** — methods and dataset versions precede results in every research summary; the expert approves what is claimed.
 
-ARTOS is a research prototype under active development; interfaces and repository structure will change. A fuller code release is planned.
+The orchestrator is a Python package driven from the repository root:
+
+```bash
+PYTHONPATH=src python3 -m artos --help
+artos doctor   # environment and configuration check
+```
+
+## Repository and run structure
+
+```
+artos_orchestrator/
+├── artos.json                  # configuration: budgets, inventory refresh rules
+├── pyproject.toml
+├── src/artos/                  # orchestration package
+├── schemas/                    # structured-artifact schemas
+├── tests/
+├── docs/
+└── projects/<project>/
+    └── runs/<timestamp>_<slug>/
+        ├── 01_intake.md            # verbatim source request
+        ├── 02_inventory.md         # resource inventory
+        ├── 03_orientation.md
+        ├── 04_route_decision.json
+        ├── 05_hypothesis_tournament.md
+        ├── run_manifest.json
+        ├── prompts/                # frozen role prompts
+        ├── work/                   # per-role writable directories
+        ├── reviews/                # audit reports
+        └── deliverables/
+```
+
+## Availability
+
+This page is the public release point for ARTOS. The concept and interfaces documented here are implemented in a working prototype that is being prepared for staged public release; this repository will be updated as components are released. Please cite this page when referring to ARTOS:
+
+> ARTOS: Agentic Research and Targeted-audit Orchestration System. https://github.com/sudshu/ARTOS
