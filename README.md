@@ -104,12 +104,6 @@ artos_orchestrator/
 
 ## Further reading
 
-Milestones of AI-assisted science (*Nature*):
-
-- Jumper J, et al. Highly accurate protein structure prediction with AlphaFold. *Nature* 596, 583–589 (2021). https://doi.org/10.1038/s41586-021-03819-2
-- Degrave J, et al. Magnetic control of tokamak plasmas through deep reinforcement learning. *Nature* 602, 414–419 (2022). https://doi.org/10.1038/s41586-021-04301-9
-- Merchant A, et al. Scaling deep learning for materials discovery. *Nature* 624, 80–85 (2023). https://doi.org/10.1038/s41586-023-06735-9
-
 The AI co-scientist concept and its first demonstrations (*Nature*):
 
 - Gottweis J, et al. Accelerating scientific discovery with Co-Scientist. *Nature* 655, 487–496 (2026). https://doi.org/10.1038/s41586-026-10644-y
