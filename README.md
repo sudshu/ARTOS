@@ -31,6 +31,10 @@ The user supplies a research question, a claim to investigate, or a document (ma
 6. **Execution and audit** — primary and adversarial agents work in separate sessions and directories; audit findings gate finalization.
 7. **Deliverables** — methods and dataset versions precede results in every research summary; the expert approves what is claimed.
 
+![ARTOS operating loop](docs/artos_flowchart.png)
+
+**The ARTOS operating loop.** A run starts from its resource envelope (scientific assets, compute and storage, human expertise, time budget) and a question-and-objective ladder that escalates from operational to fundamental objectives when the routing is ambiguous. The hypothesis explorer maintains a graph of competing explanations (illustrated here with exposure-history hypotheses for the carbon cycle: no history effect, acclimation, persistent state change, pathway shift). An independent advisor gate triages hypotheses by scientific value, discriminating power, and feasibility. Accepted hypotheses branch into parallel investigations — process-model experiments, atmospheric transport and inversions, observational statistics — each with shared evidence and provenance, evaluated on uncertainty reduction, predictive skill, tracer-observation consistency, and physical plausibility. Testing continues until the marginal information gain falls below threshold (saturation), and a human review accepts, revises, or redirects the outcome.
+
 The orchestrator is a Python package driven from the repository root:
 
 ```bash
