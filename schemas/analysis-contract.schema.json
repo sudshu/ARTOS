@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "artos://schemas/analysis-contract.schema.json",
+  "title": "ARTOS analysis contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "mother_question_sha256",
+    "selected_hypothesis_ids",
+    "datasets",
+    "metrics",
+    "null_controls",
+    "stopping_rule",
+    "test_access_history"
+  ],
+  "properties": {
+    "contract_id": {"type": "string"},
+    "mother_question_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "selected_hypothesis_ids": {"type": "array", "items": {"type": "string"}},
+    "datasets": {"type": "array", "items": {"type": "object"}},
+    "metrics": {"type": "array", "items": {"type": "object"}},
+    "null_controls": {"type": "array", "items": {"type": "object"}},
+    "stopping_rule": {"type": "string"},
+    "test_access_history": {"type": "array", "items": {"type": "object"}},
+    "compute_budget": {"type": "object"}
+  },
+  "additionalProperties": true
+}

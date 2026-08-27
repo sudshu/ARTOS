@@ -1,0 +1,33 @@
+{
+  "run_id": "demo-0001",
+  "independence": {
+    "recomputed_via_independent_path": true,
+    "adversary_saw_numbers_before_interpretation": true
+  },
+  "checks": {
+    "contract_hash_matches": true,
+    "test_split_untouched_until_freeze": true,
+    "null_controls_executed": true
+  },
+  "findings": [
+    {
+      "finding_id": "F1",
+      "severity": "minor",
+      "description": "Bootstrap block length not prespecified in the contract.",
+      "evidence": [
+        "contract.json#stopping_rule"
+      ],
+      "status": "accepted"
+    },
+    {
+      "finding_id": "F2",
+      "severity": "informational",
+      "description": "Synthetic demo: results carry no scientific meaning.",
+      "evidence": [
+        "01_intake.md"
+      ],
+      "status": "accepted"
+    }
+  ],
+  "gate": "pass_with_disclosures"
+}

@@ -28,12 +28,44 @@ A run moves through the stages shown above; every stage leaves an auditable arti
 6. **Parallel investigations and evaluation.** Accepted hypotheses branch into parallel tests — process-model experiments, atmospheric transport and inversions, observational statistics — run by primary and adversarial agents in separate sessions and separate writable directories, all sharing evidence and provenance. Evaluation asks four questions: does the test reduce uncertainty, improve predictive skill, stay consistent across tracers and observations, and remain physically plausible? Outcomes refine or falsify hypotheses and launch the next test.
 7. **Saturation and human review.** Testing continues until the marginal information gain falls below threshold. A human review then accepts, revises, or redirects the outcome; methods and dataset versions precede results in every summary, and finalization is blocked while critical or major audit findings remain unresolved.
 
-The orchestrator is a Python package driven from the repository root:
+## Install and try it
+
+The orchestrator is a dependency-free Python package (Python ≥ 3.10):
 
 ```bash
-PYTHONPATH=src python3 -m artos --help
-artos doctor   # environment and configuration check
+git clone https://github.com/sudshu/ARTOS && cd ARTOS
+pip install -e .
+cp artos.example.json artos.json   # project configuration
+artos doctor                       # environment and configuration check
 ```
+
+`artos doctor` reports the environment (abridged, illustrative output):
+
+```json
+{
+  "artos_version": "0.1.0",
+  "configured_models": {"ranker": "opus", "primary": "opus", "adversary": "opus"},
+  "python": {"version": "3.11"},
+  "tmux": {"ok": true},
+  "claude": {"ok": true},
+  "ok": true
+}
+```
+
+The full command surface ships with this skeleton; `artos doctor` works end to end, and the remaining commands expose their real interfaces and exit with a staged-release notice:
+
+| Command group | Commands |
+|---|---|
+| `artos doctor` | environment and configuration check (**works now**) |
+| `artos inventory` | `refresh`, `show` |
+| `artos data` | `register <path>` |
+| `artos run` | `create`, `list`, `show`, `transition`, `snapshot-inventory`, `freeze-contract` |
+| `artos hypotheses` | `init`, `packet`, `aggregate`, `rank` |
+| `artos session` | `launch`, `status`, `watch` |
+| `artos audit` | `init` |
+| `artos report` | `init`, `manifest` |
+
+To see every artifact a run produces, browse the fully synthetic example in [`examples/synthetic-demo-run/`](examples/synthetic-demo-run/) — intake through frozen contract, blind hypothesis tournament, adversarial audit findings, and the hash manifest. Every number in it is fabricated and labeled as such.
 
 ## Design principles
 
@@ -89,6 +121,14 @@ AI and machine learning in Earth-system science:
 
 ## Availability
 
-This page is the public release point for ARTOS. The concept and interfaces documented here are implemented in a working prototype that is being prepared for staged public release; this repository will be updated as components are released. Please cite this page when referring to ARTOS:
+This repository is the public skeleton release of ARTOS (v0.1 foundation). It contains the real package interfaces and selected working components:
+
+- the full CLI surface, with `artos doctor` working end to end;
+- the science-gate **state machine** (`src/artos/state_machine.py`) and its test, which rejects any run that tries to skip a stage;
+- the two structured-artifact **schemas** — the pre-registered analysis contract and the adversarial audit findings (`schemas/`);
+- the **architecture document and staged roadmap** (`docs/`), and the agent **operating contract** (`AGENTS.md`);
+- a fully **synthetic example run** (`examples/synthetic-demo-run/`) showing every artifact a run produces.
+
+The execution engine — inventory scanning, hypothesis scoring, the run store, and agent-session orchestration — ships with the staged full release; its interfaces are included here as documented stubs. Please cite this page when referring to ARTOS:
 
 > ARTOS: Agentic Research and Targeted-audit Orchestration System. https://github.com/sudshu/ARTOS

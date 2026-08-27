@@ -1,0 +1,38 @@
+{
+  "run_id": "demo-0001",
+  "generated": "2026-08-27T00:00:00Z",
+  "artifacts": [
+    {
+      "path": "01_intake.md",
+      "sha256": "c810de8fb6163a876a7bdb1a3991fca458f474d983810db4a125596bf6faff5b"
+    },
+    {
+      "path": "02_inventory.md",
+      "sha256": "15b8dc6aa0a7d4d3fcb0efe422a850d7b4ec45c07ec4b485c662a82cafe1b536"
+    },
+    {
+      "path": "03_orientation.md",
+      "sha256": "86425c9bb82ee57558226eb667b0631e49a650705d7741d437ab976e7281c9f7"
+    },
+    {
+      "path": "04_route_decision.json",
+      "sha256": "ccfb781e91f9d0af01f7c7b2e2261b34828a3c7daffc1000d416ce52b8f8f5f5"
+    },
+    {
+      "path": "05_hypothesis_tournament.md",
+      "sha256": "80f300cfab050407dbb1ee3367ecdc78bfe42011340526d0af18d1bbb064e283"
+    },
+    {
+      "path": "contract.json",
+      "sha256": "f893ac3a5cb1fff9122123453c1468641c4c42f6f5fd92c6d23655309681bb2b"
+    },
+    {
+      "path": "deliverables/12_final_summary.md",
+      "sha256": "9c3f95ab9361389dcd3efa1f8d6329dff0a131da101b07ce2acfc4dc694794cb"
+    },
+    {
+      "path": "reviews/audit_findings.json",
+      "sha256": "cae8614bc24335579a272ea74919d4dc8a18bec85c58a5c93880f52fc3664d28"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "contract_id": "demo-0001-contract-v1",
+  "mother_question_sha256": "c147dd4807da7be053c1a10ea829d3076eb5b745f3d2797f3ccfde78eacfeb7e",
+  "selected_hypothesis_ids": [
+    "H1",
+    "H2",
+    "H3"
+  ],
+  "datasets": [
+    {
+      "name": "demo1_ozone_2025.csv",
+      "role": "target"
+    },
+    {
+      "name": "demo1_met_2025.csv",
+      "role": "driver"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "lag_minutes",
+      "definition": "cross-correlation peak of ozone vs temperature"
+    },
+    {
+      "name": "lag_ci_90",
+      "definition": "block-bootstrap 90% interval"
+    }
+  ],
+  "null_controls": [
+    {
+      "name": "clock-offset control",
+      "definition": "re-estimate lag after +/-30 min shifts (H3)"
+    }
+  ],
+  "stopping_rule": "stop when the 90% interval width is below 20 minutes or 500 bootstrap draws are reached",
+  "test_access_history": [
+    {
+      "actor": "primary",
+      "accessed": "2026-08-27T00:00:00Z",
+      "scope": "train split only"
+    }
+  ],
+  "compute_budget": {
+    "cpu_hours": 1.0,
+    "gpu_hours": 0.0
+  }
+}

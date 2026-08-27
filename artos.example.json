@@ -1,0 +1,43 @@
+{
+  "project": {
+    "name": "ARTOS Research Orchestrator",
+    "state_dir": "state",
+    "projects_dir": "projects"
+  },
+  "inventory": {
+    "compute_ttl_hours": 72,
+    "data_incremental_ttl_hours": 72,
+    "data_full_ttl_hours": 168,
+    "max_scan_files": 250000,
+    "hash_file_limit_mb": 64,
+    "data_roots": [],
+    "artifact_roots": []
+  },
+  "agents": {
+    "provider": "claude",
+    "ranker_model": "opus",
+    "primary_model": "opus",
+    "adversary_model": "opus",
+    "allow_model_fallback": false,
+    "permission_mode": "default",
+    "monitor_interval_seconds": 60,
+    "max_budget_usd": 0.0,
+    "require_budget_limit": false
+  },
+  "research": {
+    "default_hypothesis_count": 10,
+    "minimum_hypothesis_judges": 4,
+    "minimum_codex_judges": 2,
+    "require_local_novelty_judge": true,
+    "maximum_repair_rounds": 2,
+    "require_independent_ranking": true,
+    "require_adversarial_audit": true
+  },
+  "safety": {
+    "max_download_gb_without_approval": 1.0,
+    "max_gpu_hours_without_approval": 2.0,
+    "allow_external_uploads": false,
+    "allow_outgoing_email": false,
+    "allow_destructive_actions": false
+  }
+}

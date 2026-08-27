@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "artos://schemas/audit-findings.schema.json",
+  "title": "ARTOS adversarial audit findings",
+  "type": "object",
+  "required": ["run_id", "independence", "checks", "findings", "gate"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "independence": {"type": "object"},
+    "checks": {"type": "object"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["finding_id", "severity", "description", "evidence", "status"],
+        "properties": {
+          "finding_id": {"type": "string"},
+          "severity": {"enum": ["critical", "major", "minor", "informational"]},
+          "description": {"type": "string"},
+          "evidence": {"type": "array"},
+          "status": {"enum": ["open", "repaired", "accepted", "not_reproducible"]}
+        }
+      }
+    },
+    "gate": {"enum": ["not_ready", "repair_required", "pass_with_disclosures", "pass"]}
+  }
+}
