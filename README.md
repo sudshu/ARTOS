@@ -126,3 +126,7 @@ This repository is the public skeleton release of ARTOS (v0.1 foundation). It co
 The execution engine — inventory scanning, hypothesis scoring, the run store, and agent-session orchestration — ships with the staged full release; its interfaces are included here as documented stubs. Please cite this page when referring to ARTOS:
 
 > ARTOS: Agentic Research and Targeted-audit Orchestration System. https://github.com/sudshu/ARTOS
+
+## License
+
+ARTOS is released under the [Apache License 2.0](LICENSE).
